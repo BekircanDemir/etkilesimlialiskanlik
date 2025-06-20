@@ -1,0 +1,1067 @@
+:root {
+    --primary: #6A1B9A; /* Daha koyu mor tonu (Önceki #9c27b0'den daha koyu) */
+    --primary-dark: #4A148C; /* Hover veya daha koyu vurgular için */
+    --accent: #FFC107; /* Sarımsı */
+    --background: #f4f4f4; /* Açık gri arka plan */
+    --card-bg: #ffffff; /* Kart arka planı */
+    --text: #333; /* Koyu metin */
+    --input-bg: #f9f9f9;
+    --border: #ddd;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --success: #28a745;
+    --danger: #dc3545;
+    --empty-state-color: #888;
+    --modal-bg: rgba(0, 0, 0, 0.5); /* Modal arka planı */
+    --modal-content-bg: #fff; /* Modal içeriği arka planı */
+    --modal-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Dark Mode Değişkenleri */
+body.dark-mode {
+    --background: #2c2c2c;
+    --card-bg: #3c3c3c;
+    --text: #e0e0e0;
+    --input-bg: #444;
+    --border: #555;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --modal-content-bg: #3c3c3c;
+    --modal-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    --primary: #7B1FA2; /* Dark mod için uyumlu daha koyu bir mor */
+    --primary-dark: #5E35B1; /* Dark mod hover için */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.main-header {
+    background-color: var(--primary); /* Burası mor olmalı */
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: var(--shadow);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Küçük ekranlarda alta geçsin */
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px; /* Küçük ekranlarda */
+}
+
+    .header-left .logo {
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+.main-header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.main-header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.main-header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+    .main-header nav a:hover {
+        color: var(--accent); /* Navigasyon linklerinin üzerine gelince sarı kalsın */
+    }
+
+.theme-toggle {
+    background-color: var(--accent); /* Sarı kalsın */
+    color: var(--text);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    .theme-toggle:hover {
+        background-color: #FFB300; /* Sarımsının biraz daha koyu hali */
+    }
+
+/* Cards */
+.card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+    .card h2 {
+        color: var(--primary); /* Kart başlıkları mor olmalı */
+        margin-bottom: 20px;
+        font-size: 1.7rem;
+        text-align: center;
+    }
+
+/* Habit Form */
+#habit-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Kategori selectbox'ın da hizalanması için eklendi */
+}
+
+#habit-input,
+#habit-category { /* Kategori seçici de dahil edildi ve stil verildi */
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--input-bg);
+    color: var(--text);
+    transition: border-color 0.3s ease, background-color 0.5s ease;
+    max-width: 100%; /* Küçük ekranlarda tam genişlik */
+}
+
+    #habit-input:focus,
+    #habit-category:focus {
+        outline: none;
+        border-color: var(--primary); /* Mor focus border */
+        /* box-shadow için yeni mor rengin RGB değeri (6A1B9A -> 106, 27, 154) */
+        box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.2);
+    }
+
+#add-habit-btn {
+    background-color: var(--primary); /* Ekle butonu mor olmalı */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+    #add-habit-btn:hover {
+        background-color: var(--primary-dark); /* Daha koyu mor hover efekti */
+    }
+
+.form-message {
+    color: var(--danger);
+    text-align: center;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    width: 100%;
+}
+
+.success-message {
+    background-color: var(--success);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 15px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.fade-in-out {
+    animation: fadeInOut 3.5s forwards;
+}
+
+/* Habit List */
+#habit-list {
+    list-style: none;
+    padding: 0;
+}
+
+    #habit-list li {
+        background-color: var(--input-bg);
+        border: 1px solid var(--border);
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column; /* İçeriği dikey sırala */
+        gap: 10px;
+        transition: background-color 0.5s ease, border-color 0.5s ease, transform 0.3s ease-out, opacity 0.3s ease-out;
+        position: relative; /* Animation için */
+    }
+
+        #habit-list li.removing {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+
+        #habit-list li.completed {
+            /* Tamamlanan alışkanlığın arka planı morun hafif tonu, border'ı mor olmalı */
+            /* Yeni koyu morun RGB değeri (6A1B9A -> 106, 27, 154) */
+            background-color: rgba(106, 27, 154, 0.1);
+            border-color: var(--primary);
+            text-decoration: line-through;
+            color: #888;
+        }
+
+.habit-main-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Küçük ekranlarda sarılsın */
+    gap: 10px;
+}
+
+#habit-list li input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--primary); /* Checkbox border'ı mor olmalı */
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+    #habit-list li input[type="checkbox"]::before {
+        content: '\2713'; /* Unicode checkmark */
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        font-size: 1.2rem;
+        color: #fff;
+        transition: transform 0.3s ease-out;
+    }
+
+    #habit-list li input[type="checkbox"]:checked {
+        background-color: var(--primary); /* Checkbox içi mor olmalı */
+        border-color: var(--primary); /* Checkbox border'ı mor olmalı */
+    }
+
+        #habit-list li input[type="checkbox"]:checked::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+#habit-list li span {
+    flex-grow: 1;
+    font-size: 1.1rem;
+    margin-left: 10px;
+    word-break: break-word; /* Uzun kelimeleri kırma */
+}
+
+.delete-btn {
+    background-color: var(--danger);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+    .delete-btn:hover {
+        background-color: #bd2130; /* Danger renginin biraz daha koyu hali */
+    }
+
+.habit-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 5px;
+}
+
+.progress-bar-container {
+    width: 100px; /* Sabit genişlik */
+    height: 8px;
+    background-color: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--accent); /* Progress bar hala sarı */
+    width: 0%; /* JavaScript ile ayarlanacak */
+    border-radius: 4px;
+    transition: width 0.5s ease-out;
+}
+
+
+/* Empty List Message */
+.empty-list-message {
+    color: var(--empty-state-color);
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 25px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+    .empty-list-message i {
+        font-size: 2.5rem;
+        color: var(--empty-state-color);
+        opacity: 0.7;
+    }
+
+/* Footer */
+footer {
+    background-color: var(--text);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    transition: background-color 0.5s ease;
+}
+
+    footer a {
+        color: var(--primary); /* Footer linkleri mor olmalı */
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        footer a:hover {
+            color: var(--accent);
+        }
+
+/* Suggestions Section */
+#suggestions-section {
+    text-align: center;
+}
+
+#suggestion-text {
+    font-style: italic;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+#suggestion-btn {
+    background-color: var(--accent);
+    color: var(--text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+    #suggestion-btn:hover {
+        background-color: #FFB300; /* Sarımsının biraz daha koyu hali */
+    }
+
+/* Modal Stilleri */
+.modal {
+    display: none; /* Varsayılan olarak gizli */
+    position: fixed; /* Ekranın tamamını kapla */
+    z-index: 1000; /* Diğer her şeyin üzerinde */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* İçerik taşarsa kaydırılabilir olsun */
+    background-color: var(--modal-bg);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: var(--modal-content-bg);
+    padding: 32px 24px 24px 24px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: var(--modal-shadow);
+    animation: fadeIn 0.5s;
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+    color: var(--text);
+    max-height: 90vh; /* Ekran yüksekliğinin %90'ından fazla olmasın */
+    overflow-y: auto; /* İçerik taşarsa dikeyde kaydırma çubuğu çıksın */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content .close {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    font-size: 2rem;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+    .modal-content .close:hover,
+    .modal-content .close:focus {
+        color: #555;
+        text-decoration: none;
+    }
+
+.modal-content h2 {
+    color: var(--primary); /* Modal başlıkları mor olmalı */
+    margin-bottom: 15px;
+    font-size: 1.7rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+    .modal-content h2 i {
+        font-size: 1.8rem;
+    }
+
+.modal-content p {
+    margin-bottom: 10px;
+}
+
+.modal-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+    .modal-content ul li {
+        margin-bottom: 5px;
+    }
+
+.modal-content a {
+    color: var(--primary); /* Modal linkleri mor olmalı */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    .modal-content a:hover {
+        color: var(--accent);
+        text-decoration: underline;
+    }
+
+.modal-content hr {
+    border: none;
+    border-top: 1px solid rgba(100, 100, 100, 0.1);
+    margin: 20px 0;
+}
+
+/* İstatistikler modalı içindeki metin istatistikleri */
+.modal-content #habit-stats p {
+    font-size: 1rem;
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+    .modal-content #habit-stats p span {
+        font-weight: 600;
+        color: var(--primary); /* İstatistik sayıları mor olmalı */
+    }
+
+/* Empty Stats Message için de flexbox ayarı */
+.empty-stats-message {
+    color: var(--empty-state-color);
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 25px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    flex-grow: 1; /* Modal boşken kendini uzatsın */
+}
+
+    .empty-stats-message i {
+        font-size: 2.5rem;
+        color: var(--empty-state-color);
+        opacity: 0.7;
+    }
+
+/* Responsive Ayarlamalar */
+@media (max-width: 768px) {
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    .header-left {
+        margin-bottom: 15px;
+    }
+
+    .main-header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .theme-toggle {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #habit-form {
+        flex-direction: column;
+    }
+
+    #habit-input,
+    #habit-category, /* Kategori seçici de tam genişlikte olsun */
+    #add-habit-btn {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 25px 15px 15px 15px;
+    }
+
+        .modal-content .close {
+            right: 10px;
+            top: 8px;
+            font-size: 1.8rem;
+        }
+}
+/* --- Takvim Stilleri --- */
+.calendar-section {
+    text-align: center;
+}
+
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .calendar-controls button {
+        background-color: var(--primary);
+        color: #fff;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+        .calendar-controls button:hover {
+            background-color: var(--primary-dark);
+        }
+
+#current-month-year {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: var(--accent);
+    color: var(--text);
+    padding: 10px 0;
+    border-radius: 8px 8px 0 0;
+    font-weight: 600;
+}
+
+    .calendar-header span {
+        text-align: center;
+        padding: 5px 0;
+    }
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 0 0 8px 8px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.calendar-day {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 10px 5px;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.1s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px; /* Gün kutularının yüksekliği */
+    position: relative;
+}
+
+    .calendar-day:hover {
+        background-color: var(--primary-light); /* Morun daha açık bir tonu */
+        border-color: var(--primary);
+        transform: translateY(-2px);
+    }
+
+    .calendar-day.empty {
+        background-color: transparent;
+        border: none;
+        cursor: default;
+        pointer-events: none; /* Üzerine tıklanamaz */
+    }
+
+    .calendar-day.today {
+        border-color: var(--success); /* Bugün yeşil çerçeveli */
+        font-weight: bold;
+    }
+
+    .calendar-day.selected-habit-completed {
+        background-color: rgba(var(--primary-rgb), 0.2); /* Seçilen alışkanlık tamamlandıysa morun şeffaf tonu */
+        border-color: var(--primary);
+        color: var(--primary);
+        font-weight: bold;
+    }
+
+    .calendar-day .day-number {
+        font-weight: bold;
+        color: var(--text);
+    }
+
+    .calendar-day.selected-habit-completed .day-number {
+        color: var(--primary); /* Tamamlanmış günün sayısı mor olsun */
+    }
+
+.calendar-hint {
+    margin-top: 15px;
+    font-style: italic;
+    color: var(--empty-state-color);
+}
+
+/* Dark mode için takvim stillerini güncelleyelim */
+body.dark-mode .calendar-header {
+    background-color: var(--accent); /* Koyu modda da sarı kalsın */
+    color: var(--text); /* Koyu modda metin rengi açık olmalı */
+}
+
+body.dark-mode .calendar-day {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border);
+}
+
+    body.dark-mode .calendar-day:hover {
+        background-color: var(--primary); /* Koyu modda hover rengi primary mor olsun */
+        border-color: var(--primary-light);
+    }
+
+    body.dark-mode .calendar-day.selected-habit-completed {
+        background-color: rgba(var(--primary-rgb-dark), 0.3); /* Koyu modda daha koyu morun şeffaf tonu */
+        border-color: var(--primary-dark);
+        color: var(--primary-dark);
+    }
+
+        body.dark-mode .calendar-day.selected-habit-completed .day-number {
+            color: var(--primary-dark);
+        }
+
+/* Yeni değişkenlerin RGB değerlerini eklememiz lazım (eğer yoksa) */
+:root {
+    /* ... mevcut değişkenler ... */
+    --primary-rgb: 106, 27, 154; /* #6A1B9A'nın RGB değerleri */
+}
+
+body.dark-mode {
+    /* ... mevcut dark mode değişkenleri ... */
+    --primary-rgb-dark: 123, 31, 162; /* #7B1FA2'nin RGB değerleri */
+}
+
+/* No habit selected message */
+#no-habit-selected-message {
+    color: var(--danger);
+    font-weight: bold;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+/* --- Yeni İstatistik ve Grafik Stilleri --- */
+
+/* Genel İstatistikler Modalında Streak görünümü */
+#habit-stats p span#longest-streak {
+    color: var(--primary); /* Mor renk korundu */
+    font-weight: 600;
+}
+
+/* Aylık İlerleme Grafiği Bölümü */
+.monthly-progress-chart {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+    .monthly-progress-chart h3 {
+        color: var(--primary);
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+    }
+
+.chart-container {
+    position: relative; /* EKLENECEK */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 150px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    overflow-x: auto;
+    padding: 10px;
+    gap: 2px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+}
+
+
+.chart-bar {
+    width: 2.5%; /* Her bir gün için çubuk genişliği (31 gün için yaklaşık 3.2%, 30 gün için 3.3%) */
+    min-width: 8px; /* Çok küçük ekranlarda kaybolmasın */
+    background-color: var(--accent); /* Sarı çubuklar */
+    border-radius: 2px 2px 0 0;
+    transition: height 0.3s ease-out, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column-reverse; /* Gün numarasını alta hizala */
+    align-items: center;
+    position: relative;
+    cursor: default; /* Üzerine gelince imleç değişmesin */
+}
+
+    .chart-bar.completed {
+        background-color: var(--primary); /* Tamamlandıysa mor çubuk */
+    }
+
+    .chart-bar .day-label {
+        font-size: 0.75rem;
+        color: var(--text);
+        margin-top: 5px;
+        position: absolute;
+        bottom: -18px; /* Çubuğun altına yerleştir */
+        white-space: nowrap; /* Gün numarası kırılmasın */
+    }
+
+    .chart-bar.completed .day-label {
+        color: #fff; /* Mor çubukta beyaz yazı */
+    }
+
+    /* Tooltip için (tamamlanma bilgisi) */
+    .chart-bar .tooltip {
+        visibility: hidden;
+        width: 100px;
+        background-color: var(--text);
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 105%; /* Çubuğun üstünde görünmesi için */
+        left: 50%;
+        margin-left: -50px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .chart-bar:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .chart-bar .tooltip::after {
+        content: " ";
+        position: absolute;
+        top: 100%; /* Tooltip üçgeni */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: var(--text) transparent transparent transparent;
+    }
+
+.chart-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--empty-state-color);
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+}
+
+
+/* Dark Mode İçin Chart Stilleri */
+body.dark-mode .chart-bar {
+    background-color: var(--accent);
+}
+
+    body.dark-mode .chart-bar.completed {
+        background-color: var(--primary-dark); /* Koyu modda daha koyu mor */
+    }
+
+    body.dark-mode .chart-bar .day-label {
+        color: var(--text); /* Koyu modda açık renk */
+    }
+
+    body.dark-mode .chart-bar.completed .day-label {
+        color: #fff;
+    }
+
+    body.dark-mode .chart-bar .tooltip {
+        background-color: var(--card-bg); /* Koyu modda tooltip arka planı */
+        color: var(--text);
+    }
+
+        body.dark-mode .chart-bar .tooltip::after {
+            border-color: var(--card-bg) transparent transparent transparent;
+        }
+/* --- Yeni Başarılar ve Bildirim Stilleri --- */
+
+/* Başarılar Modalı İçin Grid Düzeni */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Rozetleri responsive grid'e yerleştir */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center; /* Öğeleri ortaya hizala */
+    align-items: start; /* Öğeleri yukarı hizala */
+    min-height: 150px; /* Boş mesaj için yer */
+}
+
+.achievement-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s ease-in-out;
+    width: 100%; /* Grid içinde doluluk */
+    max-width: 150px; /* Maksimum genişlik */
+}
+
+    .achievement-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .achievement-card i {
+        font-size: 3.5rem;
+        color: var(--primary); /* Mor renk */
+        margin-bottom: 5px;
+    }
+
+    .achievement-card h4 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: var(--text);
+    }
+
+    .achievement-card p {
+        font-size: 0.85rem;
+        color: var(--empty-state-color); /* Gri ton */
+        margin: 0;
+    }
+
+    /* Kazanılmamış rozetler için stil */
+    .achievement-card.locked {
+        opacity: 0.5;
+        filter: grayscale(100%);
+        position: relative;
+    }
+
+        .achievement-card.locked::after {
+            content: '\f023'; /* Fa Lock icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            color: var(--text); /* Kilit ikonu rengi */
+            background-color: rgba(var(--card-bg-rgb), 0.7); /* Arka planı biraz karart */
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+/* Boş başarılar mesajı */
+.empty-achievements-message {
+    color: var(--empty-state-color);
+    text-align: center;
+    font-style: italic;
+    font-size: 1rem;
+    width: 100%; /* Tüm alanı kapsa */
+    grid-column: 1 / -1; /* Tüm sütunları kapla */
+    margin-top: 30px;
+}
+
+    .empty-achievements-message i {
+        display: block;
+        font-size: 3rem;
+        margin-bottom: 15px;
+        color: var(--empty-state-color);
+    }
+
+/* Achievement Toast (Bildirim Kutusu) */
+.achievement-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--accent); /* Sarı renk */
+    color: var(--text);
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px); /* Ekran dışından gelsin */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, visibility 0.5s;
+}
+
+    .achievement-toast.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .achievement-toast i {
+        font-size: 1.5rem;
+        color: var(--primary); /* Mor yıldız ikonu */
+    }
+
+/* Dark Mode için Başarılar Stilleri */
+body.dark-mode .achievement-card {
+    background-color: var(--card-bg-dark);
+    box-shadow: var(--shadow-dark);
+}
+
+    body.dark-mode .achievement-card i {
+        color: var(--primary-dark);
+    }
+
+    body.dark-mode .achievement-card.locked::after {
+        color: var(--text-dark);
+        background-color: rgba(var(--card-bg-dark-rgb), 0.7);
+    }
+
+body.dark-mode .achievement-toast {
+    background-color: var(--accent-dark);
+    color: var(--text-dark);
+    box-shadow: var(--shadow-dark);
+}
+
+    body.dark-mode .achievement-toast i {
+        color: var(--primary-dark);
+    }
+
+.header-logo {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+    .header-logo:hover {
+        transform: scale(1.1); /* 🔍 hover efekti */
+    }

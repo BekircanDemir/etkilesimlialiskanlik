@@ -1,0 +1,7 @@
+C:\Users\USER\Desktop\etkilesimlialışkanlık\habittracker\habittracker.AppHost\obj\Debug\net8.0\habittracker.AppHost.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\etkilesimlialışkanlık\habittracker\habittracker.AppHost\obj\Debug\net8.0\habittracker.AppHost.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\etkilesimlialışkanlık\habittracker\habittracker.AppHost\obj\Debug\net8.0\habittracker.AppHost.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\etkilesimlialışkanlık\habittracker\habittracker.AppHost\obj\Debug\net8.0\habittracker.AppHost.AssemblyInfo.cs
+C:\Users\USER\Desktop\etkilesimlialışkanlık\habittracker\habittracker.AppHost\obj\Debug\net8.0\habittracker.AppHost.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\etkilesimlialışkanlık\habittracker\habittracker.AppHost\obj\Debug\net8.0\Aspire\references\.ProjectMetadata.g.cs
+C:\Users\USER\Desktop\etkilesimlialışkanlık\habittracker\habittracker.AppHost\obj\Debug\net8.0\Aspire\references\_AppHost.ProjectMetadata.g.cs

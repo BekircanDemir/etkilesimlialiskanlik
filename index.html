@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alışkanlık Takip Uygulaması</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="header-left">
+                <img src="ımages/logo.png" alt="Logo" class="header-logo">
+                <h1>Alışkanlık Takipçisi</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Ana Sayfa</a></li>
+                    <li><a href="#" id="about-link">Hakkında</a></li>
+                    <li><a href="#" id="stats-link">İstatistikler</a></li>
+                    <li><a href="#" id="achievements-link">Başarılar</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" id="theme-toggle">
+                <span id="theme-status">Koyu Mod</span> <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card habit-section">
+            <h2>Yeni Alışkanlık Ekle</h2>
+            <div id="success-message" class="success-message"></div>
+            <form id="habit-form">
+                <input type="text" id="habit-input" placeholder="Yeni bir alışkanlık girin (örn. günde 10 sayfa oku)">
+                <select id="habit-category">
+                    <option value="">Kategori Seçin</option>
+                    <option value="sağlık">Sağlık</option>
+                    <option value="eğitim">Eğitim</option>
+                    <option value="kişisel gelişim">Kişisel Gelişim</option>
+                    <option value="finans">Finans</option>
+                    <option value="sosyal">Sosyal</option>
+                    <option value="hobi">Hobi</option>
+                    <option value="diğer">Diğer</option>
+                </select>
+                <button type="submit" id="add-habit-btn"><i class="fas fa-plus"></i> Ekle</button>
+            </form>
+            <p id="form-message" class="form-message"></p>
+        </section>
+
+        <section class="card habit-list-section">
+            <h2>Alışkanlıklarım</h2>
+            <ul id="habit-list">
+                <li class="empty-list-message" id="empty-list-message">
+                    <i class="far fa-clipboard"></i>
+                    Henüz bir alışkanlık yok. Haydi bir tane ekle!
+                </li>
+            </ul>
+        </section>
+
+        <section class="card calendar-section">
+            <h2>Alışkanlık Takvimi</h2>
+            <div class="calendar-controls">
+                <button id="prev-month-btn"><i class="fas fa-chevron-left"></i></button>
+                <h3 id="current-month-year"></h3>
+                <button id="next-month-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="calendar-header">
+                <span>Pzt</span>
+                <span>Sal</span>
+                <span>Çar</span>
+                <span>Per</span>
+                <span>Cum</span>
+                <span>Cmt</span>
+                <span>Paz</span>
+            </div>
+            <div class="calendar-grid" id="calendar-grid"></div>
+            <p class="calendar-hint">Takvimi görmek için yukarıdan bir alışkanlık seçin.</p>
+            <p id="no-habit-selected-message" class="error-message"></p>
+
+            <div class="monthly-progress-chart">
+                <h3>Aylık İlerleme (Seçili Alışkanlık)</h3>
+                <div id="monthly-chart-container" class="chart-container">
+                    <p class="chart-hint">Grafiği görmek için bir alışkanlık seçin.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" id="suggestions-section">
+            <h2>Önerilen Alışkanlıklar</h2>
+            <p id="suggestion-text">Öneri yükleniyor...</p>
+            <button id="suggestion-btn"><i class="fas fa-lightbulb"></i> Öneri Al</button>
+            <p id="api-error-message" class="error-message"></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Alışkanlık Takipçisi. Tüm Hakları Saklıdır.</p>
+            <p>Kaynak: <a href="https://api.adviceslip.com/" target="_blank">Advice Slip API</a></p>
+        </div>
+    </footer>
+
+    <!-- Hakkında Modal -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="about-modal-close">&times;</span>
+            <h2><i class="fas fa-info-circle"></i> Alışkanlık Takipçisi Hakkında</h2>
+            <p>Bu uygulama, günlük alışkanlıklarınızı kolayca takip etmeniz, yönetmeniz ve yeni alışkanlıklar edinmeniz için tasarlanmıştır. Temel özellikleri şunlardır:</p>
+            <ul>
+                <li><strong>Alışkanlık Ekleme ve Silme:</strong> Yeni alışkanlıklarınızı ekleyebilir ve artık takip etmek istemediğiniz alışkanlıkları silebilirsiniz.</li>
+                <li><strong>Alışkanlık Tamamlama:</strong> Günlük hedeflerinize ulaştıkça alışkanlıklarınızı tamamlandı olarak işaretleyebilirsiniz.</li>
+                <li><strong>Rastgele Öneri:</strong> Size ilham verecek yeni alışkanlık veya tavsiye önerileri alabilirsiniz.</li>
+                <li><strong>Koyu/Açık Mod:</strong> Uygulamanın görünümünü kişiselleştirebilirsiniz.</li>
+            </ul>
+            <p>Uygulama, temel web teknolojileri olan HTML, CSS ve JavaScript kullanılarak geliştirilmiştir. Verileriniz yerel depolama (Local Storage) aracılığıyla tarayıcınızda saklanır, böylece sayfayı kapattığınızda bile alışkanlıklarınız kaybolmaz.</p>
+            <p>Geliştiren: Sudenaz Kobilay, Beste Nur Şahin, Bekircan Demir</p>
+        </div>
+    </div>
+
+    <!-- İstatistikler Modal -->
+    <div id="statsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="stats-modal-close">&times;</span>
+            <h2><i class="fas fa-chart-bar"></i> Alışkanlık İstatistikleri</h2>
+            <div id="habit-stats">
+                <p>Toplam Alışkanlık Sayısı: <span id="total-habits">0</span></p>
+                <p>Tamamlanan Alışkanlık Sayısı: <span id="completed-habits">0</span></p>
+                <p>Bekleyen Alışkanlık Sayısı: <span id="pending-habits">0</span></p>
+                <hr>
+                <h3>Günlük İstatistikler</h3>
+                <p>Bugün Tamamlanan Alışkanlık Sayısı: <span id="daily-completed-count">0</span></p>
+                <p>En Yüksek Günlük Tamamlama Serisi: <span id="longest-streak">0</span> gün</p>
+            </div>
+            <p class="empty-stats-message" id="empty-stats-message" style="display: none;">
+                <i class="fas fa-chart-line"></i>
+                Henüz istatistik gösterecek bir alışkanlığınız yok. Başlamak için bir alışkanlık ekleyin!
+            </p>
+        </div>
+    </div>
+
+    <!-- Başarılar Modal -->
+    <div id="achievementsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="achievements-modal-close">&times;</span>
+            <h2><i class="fas fa-award"></i> Kazanılan Başarılar</h2>
+            <div id="achievements-list" class="achievements-grid">
+                <p class="empty-achievements-message" id="empty-achievements-message">
+                    <i class="fas fa-trophy"></i>
+                    Henüz bir başarı kazanmadın. Alışkanlıklarını takip etmeye devam et!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Başarı Bildirimi -->
+    <div id="achievement-toast" class="achievement-toast">
+        <i class="fas fa-star"></i> Yeni Başarı! <span id="achievement-name"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
