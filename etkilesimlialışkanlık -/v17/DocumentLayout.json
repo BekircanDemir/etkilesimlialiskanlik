@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USER\\Desktop\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya (2)\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\Desktop\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya (2)\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\Desktop\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya (2)\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\Script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\Script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\Desktop\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya (2)\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\Style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\Style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\Desktop\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya (2)\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya (2)\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\README.md",
+              "RelativeDocumentMoniker": "etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\README.md",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya (2)\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\README.md",
+              "RelativeToolTip": "etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH0AAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-05-30T22:56:53.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Style.css",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya (2)\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\Style.css",
+              "RelativeDocumentMoniker": "etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\Style.css",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya (2)\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\Style.css",
+              "RelativeToolTip": "etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\Style.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-30T22:47:46.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Script.js",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya (2)\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\Script.js",
+              "RelativeDocumentMoniker": "etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\Script.js",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya (2)\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\Script.js",
+              "RelativeToolTip": "etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\Script.js",
+              "ViewState": "AgIAAOACAAAAAAAAAAAAAAIDAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-30T22:47:44.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya (2)\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\index.html",
+              "RelativeDocumentMoniker": "etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\index.html",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya (2)\\etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\index.html",
+              "RelativeToolTip": "etkilesimlial\u0131\u015Fkanl\u0131k - Kopya\\habittracker\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-05-30T22:47:31.202Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
